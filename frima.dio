@@ -1,0 +1,34 @@
+<mxfile host="65bd71144e" modified="2020-11-08T00:55:04.198Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.0 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" version="13.6.5" etag="6ooPJg8MeGtcRHVvan2E">
+    <diagram id="K588u9Miy2H_4-ZG-4Bm" name="ページ1">
+        <mxGraphModel dx="727" dy="584" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="17" value="items table" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="50" width="160" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="user&#10;&#10;name&#10;&#10;discription&#10;&#10;category&#10;&#10;condition&#10;&#10;price" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="17">
+                    <mxGeometry y="30" width="160" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="purchase table" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="450" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="user&#10;&#10;items&#10;&#10;adress" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="20">
+                    <mxGeometry y="30" width="160" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Users table" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="30" width="160" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="nickanem&#10;&#10;email&#10;&#10;password&#10;&#10;first_name&#10;&#10;last_name&#10;&#10;first_name_kana&#10;&#10;last_name_kana&#10;&#10;birth_date&#10;&#10;&#10;&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="9">
+                    <mxGeometry y="30" width="160" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="9" source="10" target="10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="9" source="10" target="10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
