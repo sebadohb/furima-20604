@@ -42,7 +42,7 @@
  - belongs_to :handling_time
  - belongs_to :delivery_charge
  - has_one_attached :images
-
+ - has_one :purchase
 
 ## purchases テーブル
 
