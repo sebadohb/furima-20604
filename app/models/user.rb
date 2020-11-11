@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true
-  validates :email, uniqueness: true
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i,
-    message: "Password Include both letters and numbers" }
+  validates :email, uniqueness: { case_sensitive: true }
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i,
+                                 message: 'Password Include both letters and numbers' }
   with_options presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: 'Full-width characters' } do
     validates :first_name
     validates :last_name
@@ -17,5 +17,4 @@ class User < ApplicationRecord
     validates :last_name_kana
   end
   validates :birth_date, presence: true
-
 end
