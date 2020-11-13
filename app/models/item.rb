@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   }
 
   validates :price, numericality: { only_integer: true,
-    message: 'must be rewritten'
+    message: 'is incorrect, must be rewritten'
   }
 
 
@@ -16,6 +16,7 @@ class Item < ApplicationRecord
   validates :condition_id, numericality: { other_than: 1, message: 'should be selected' }
   validates :handling_time_id, numericality: { other_than: 1, message: 'should be selected' }
   validates :prefecture_id, numericality: { other_than: 1, message: 'should be selected' }
+  validates :delivery_charge_id, numericality: { other_than: 1, message: 'should be selected' }
   belongs_to :user
   belongs_to_active_hash :category
   belongs_to_active_hash :condition
