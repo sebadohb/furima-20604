@@ -10,14 +10,14 @@ class Item < ApplicationRecord
   validates :price, numericality: { only_integer: true,
                                     message: 'is incorrect, must be rewritten' }
 
-  with_options  numericality: { other_than: 1, message: 'should be selected' } do
-  validates :category_id
-  validates :condition_id
-  validates :handling_time_id
-  validates :prefecture_id
-  validates :delivery_charge_id
+  with_options numericality: { other_than: 1, message: 'should be selected' } do
+    validates :category_id
+    validates :condition_id
+    validates :handling_time_id
+    validates :prefecture_id
+    validates :delivery_charge_id
   end
-  
+
   belongs_to :user
   belongs_to_active_hash :category
   belongs_to_active_hash :condition

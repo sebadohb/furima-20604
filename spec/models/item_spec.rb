@@ -32,41 +32,31 @@ RSpec.describe Item, type: :model do
       end
 
       it 'カテゴリーの情報がない' do
-        @item.category_id = nil
-        @item.valid?
-        @item.category_id = "1"
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include 'Category should be selected'
       end
 
       it '商品の状態についての情報がない' do
-        @item.condition_id = nil
-        @item.valid?
-        @item.condition_id = "1"
+        @item.condition_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include 'Condition should be selected'
       end
 
       it '配送料の負担についての情報がない' do
-        @item.delivery_charge_id = nil
-        @item.valid?
-        @item.delivery_charge_id = "1"
+        @item.delivery_charge_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include 'Delivery charge should be selected'
       end
 
       it '発送までの日数についての情報がない' do
-        @item.handling_time_id = nil
-        @item.valid?
-        @item.handling_time_id = "1"
+        @item.handling_time_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include 'Handling time should be selected'
       end
 
       it '発送元についての情報がない' do
-        @item.prefecture_id = nil
-        @item.valid?
-        @item.prefecture_id = "1"
+        @item.prefecture_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include 'Prefecture should be selected'
       end
