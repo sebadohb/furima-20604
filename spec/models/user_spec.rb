@@ -33,7 +33,6 @@ describe User do
         @user.last_name = 'ゴトウ'
         expect(@user).to be_valid
       end
-
       it 'first_name_kanaが全角カナであれば登録できること' do
         @user.first_name_kana = 'タカシ'
         expect(@user).to be_valid
