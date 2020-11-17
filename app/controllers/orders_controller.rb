@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_item, only: [:index, :create]
+  before_action :set_item, only: [:index, :create, :item_holder, :sold_out]
   before_action :item_holder, only: [:index]
   before_action :sold_out, only: [:index]
 
@@ -35,12 +35,10 @@ class OrdersController < ApplicationController
   end
 
   def item_holder
-    @item = Item.find(params[:item_id])
     redirect_to root_path if current_user.id == @item.user_id
   end
 
   def sold_out
-    @item = Item.find(params[:item_id])
     redirect_to root_path if @item.purchase.present?
   end
   def set_item
