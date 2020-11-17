@@ -1,16 +1,15 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_item, only: [:index, :create]
   before_action :item_holder, only: [:index]
   before_action :sold_out, only: [:index]
 
   def index
-    @item = Item.find(params[:item_id])
     @customer = Customer.new
   end
 
   def create
     @customer = Customer.new(customer_params)
-    @item = Item.find(params[:item_id])
     if @customer.valid?
       pay_item
       @customer.save
@@ -43,5 +42,8 @@ class OrdersController < ApplicationController
   def sold_out
     @item = Item.find(params[:item_id])
     redirect_to root_path if @item.purchase.present?
+  end
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 end
