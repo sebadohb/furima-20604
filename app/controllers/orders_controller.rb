@@ -1,11 +1,13 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :item_holder, only: [:index]
+  before_action :sold_out, only: [:index]
+
   def index
     @item = Item.find(params[:item_id])
     @customer = Customer.new
   end
 
-  def new
-  end
   def create
     @customer = Customer.new(customer_params)
     @item = Item.find(params[:item_id])
@@ -25,7 +27,7 @@ class OrdersController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
       amount: @item.price,
       card: customer_params[:token],
@@ -33,5 +35,13 @@ class OrdersController < ApplicationController
     )
   end
 
+  def item_holder
+    @item = Item.find(params[:item_id])
+    redirect_to root_path if current_user.id == @item.user_id
+  end
 
+  def sold_out
+    @item = Item.find(params[:item_id])
+    redirect_to root_path if @item.purchase.present?
+  end
 end
