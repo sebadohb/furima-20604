@@ -51,8 +51,6 @@ class ItemsController < ApplicationController
   end
 
   def correct_user
-    unless current_user.id == @item.user.id
-      redirect_to root_path 
-    end
+    redirect_to root_path unless current_user.id == @item.user.id
   end
 end

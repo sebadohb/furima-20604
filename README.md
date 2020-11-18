@@ -54,10 +54,10 @@
  ## Association
 
 - belongs_to :user
-- belongs_to :item 
-- has_one    :destination
+- belongs_to :item
+- has_one    :order
 
-##  destination テーブル
+##  orders テーブル
 
 | Column        | Type         | Options                        |
 | ------------- | ------------ | ------------------------------ |

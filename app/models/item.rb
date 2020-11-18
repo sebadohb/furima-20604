@@ -25,4 +25,5 @@ class Item < ApplicationRecord
   belongs_to_active_hash :handling_time
   belongs_to_active_hash :prefecture
   has_one_attached :image
+  has_one :purchase
 end
